@@ -1,0 +1,23 @@
+h1{
+    background-color: orange;
+    color:white;
+}
+p{
+    display:flex;
+    flex-direction: row;
+}
+p.study{
+    
+    flex-direction: row;
+    border: thick double #ff5400;
+    padding: 25px;
+    margin: 10px;
+    background-color:#eeeeee;
+}
+p.page{
+    
+}
+h3{
+    color:white;
+    background:linear-gradient(0.25turn,#3e5bfb,#79ddf0,white);
+}
