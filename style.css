@@ -2,22 +2,51 @@ h1{
     background-color: orange;
     color:white;
 }
-p{
-    display:flex;
-    flex-direction: row;
+div.table{
+    display:grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 50px 50px;
+    
+    
 }
 p.study{
     
-    flex-direction: row;
-    border: thick double #ff5400;
-    padding: 25px;
+    grid-column: 1;
+    grid-row: 1/4;
+    padding: 20px;
+    margin: 5px;
+    background-color:#eeeeee;
+}p.product{
+    grid-column: 2/4;
+    grid-row: 1;
+    padding: 12px;
+    margin: 5px;
+    color:blue;
+    background:linear-gradient(0.25turn,orange,white);
+}
+ul.page{
+    grid-column: 2/4;
+    grid-row: 2/4;
+    padding: 18px;
     margin: 10px;
     background-color:#eeeeee;
-}
-p.page{
-    
 }
 h3{
     color:white;
     background:linear-gradient(0.25turn,#3e5bfb,#79ddf0,white);
+}
+h2#object{
+    color:blue;
+    border:thick double red;
+    background-color:#eeeeee;
+}
+h2#project{
+    color:red;
+    border:dashed green;
+    background-color:#eeeeee;
+}
+h2#test{
+    text-shadow: yellow 1px 0 15px;
+    color :black;
+    border: 2mm ridge rgb(21, 159, 252);
 }
