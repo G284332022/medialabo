@@ -21,6 +21,7 @@ p.study{
     grid-row: 1;
     padding: 12px;
     margin: 5px;
+    text-align: center;
     color:blue;
     background:linear-gradient(0.25turn,orange,white);
 }
