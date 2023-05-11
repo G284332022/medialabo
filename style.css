@@ -51,3 +51,8 @@ h2#test{
     color :black;
     border: 2mm ridge rgb(21, 159, 252);
 }
+h2#kazuate{
+    text-shadow: rgb(31, 151, 255) 1px 0 15px;
+    color :black;
+    border: 2mm ridge rgb(58, 255, 94);
+}
