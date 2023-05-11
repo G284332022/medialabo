@@ -25,6 +25,15 @@ p.study{
     color:blue;
     background:linear-gradient(0.25turn,orange,white);
 }
+p.kazu{
+    grid-column: 2/4;
+    grid-row: 1;
+    padding: 12px;
+    margin: 5px;
+    text-align: center;
+    color:black;
+    background:linear-gradient(0.25turn,rgb(255, 89, 190),white);
+}
 ul.page{
     grid-column: 2/4;
     grid-row: 2/4;
@@ -52,7 +61,8 @@ h2#test{
     border: 2mm ridge rgb(21, 159, 252);
 }
 h2#kazuate{
-    text-shadow: rgb(31, 151, 255) 1px 0 15px;
+    background-color:#eeeeee;
     color :black;
     border: 2mm ridge rgb(58, 255, 94);
+    font-style: italic;
 }
