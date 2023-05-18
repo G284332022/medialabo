@@ -14,13 +14,42 @@ let data = [
 //// 注意: 以上は編集しないこと!
 
 // 練習4-2 メッセージ追加プログラム
-
+let h2 = document.querySelector('h2#ex42');
+let a = document.createElement('p');
+a.textContent = '写真表と都市の緯度経度のページです';
+h2.insertAdjacentElement('afterend' , a); 
+a.style.textEmphasis='sesame green'; 
 
 // 練習4-3 写真表作成プログラム
+let div = document.querySelector('div#phototable');
+let p3 = document.createElement('p');
+let img1 = document.createElement('img');
+img1.setAttribute('src', 'taro.png');
+p3.insertAdjacentElement('beforeend', img1);
+div.insertAdjacentElement('beforeend', p3);
 
+let p22 = document.createElement('p'); 
+let img2 = document.createElement('img');
+img2.setAttribute('src', 'jiro.png'); 
+p22.insertAdjacentElement('beforeend', img2); 
+div.insertAdjacentElement('beforeend', p22); 
+let img3 = document.createElement('img'); 
+img3.setAttribute('src', 'hanako.png'); 
+let p33 = document.createElement('p');
+p33.insertAdjacentElement('beforeend', img3); 
+div.insertAdjacentElement('beforeend', p33);  
 
 // 練習4-4 箇条書き削除プログラム
-
+let ul = document.querySelectorAll('ul#location > li');
+for(rev of ul){
+    rev.remove();
+}
 
 // 練習4-5 箇条書き追加プログラム
 
+let ul1 = document.querySelector('ul#location');
+for(let t1 of data){
+	let lli = document.createElement('li');
+	  lli.textContent=t1.name+t1.lat+t1.lng;
+	  ul1.insertAdjacentElement('beforeend',lli);
+  }
