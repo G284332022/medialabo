@@ -4,15 +4,18 @@ console.log('答え（デバッグ用）: ' + kotae);
 
 // 入力回数（予想回数）
 let kaisu = 0;
-let yoso = 4;
+
 // 予想を4回実行する
 // 将来以下の hantei(); の4回の呼び出しを全て削除する
 // 代わりにここでは，ボタンを押したら hantei() を呼び出すイベント処理をする
-hantei();
 
+let a = document.querySelector('button#ans'); 
+a.addEventListener('click', hantei);
 
 // ボタンを押した後の処理をする関数 hantei() の定義
 function hantei() {
+  let Str = document.querySelector('input[name="yoso"]');
+  let yoso = Str.value;
   // 将来ここでは 4 ではなくテキストボックスに指定された数値を yoso に代入する
   kaisu=kaisu+1
   let k = document.querySelector('span#kaisu');
@@ -23,9 +26,9 @@ function hantei() {
 
   console.log(kaisu + '回目の予想: ' + yoso);
   if(kaisu < 3){
-    if(kotae===yoso){
+    if(kotae==yoso){
         re.textContent = '正解です.おめでとう!';
-        kaisu = 4;
+        kaisu = 3;
     }else{
         if(kotae>yoso){
         re.textContent = 'まちがい.答えはもっと大きいですよ';
@@ -33,8 +36,12 @@ function hantei() {
             re.textContent = 'まちがい.答えはもっと小さいですよ';
         }
     }
-  }else if(kaisu===3){
+  }else if(kaisu==3){
+    if(kotae==yoso){
+      re.textContent = '正解です.おめでとう!';
+    }else{
     re.textContent = 'まちがい.残念でした答えは '+kotae+' です.';
+    }
 }else{
     re.textContent = '答えは ' + kotae + 'でした.すでにゲームは終わっています';
 }
