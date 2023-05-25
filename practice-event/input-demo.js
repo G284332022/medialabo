@@ -1,6 +1,6 @@
 // 1. イベントハンドラの登録
 
-let b = document.querySelector('#print');
+let b = document.querySelector('#print');//button#print
 b.addEventListener('click', greeting);
 
 // 2. イベントハンドラの定義
