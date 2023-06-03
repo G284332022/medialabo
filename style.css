@@ -65,3 +65,19 @@ h2#kazuate{
     border: 2mm ridge rgb(58, 255, 94);
     font-style: italic;
 }
+h2#impression{
+    color:white;
+    background:linear-gradient(0.25turn,#8f02ac,#f811ff,#e598f4,white);
+}
+p.write{
+    background-color:#eeeeee;
+}
+p#proj{
+    grid-column: 2/4;
+    grid-row: 1;
+    padding: 12px;
+    margin: 5px;
+    text-align: center;
+    color:black;
+    background:linear-gradient(0.25turn,rgb(29, 255, 10),white);
+}
