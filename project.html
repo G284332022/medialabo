@@ -6,20 +6,51 @@
         <link rel= "stylesheet" href= "project.css"> 
         <script src="gourmet.js" defer>
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     </head>
     <body>
         <h1>グルメ情報</h1>
-        <h2>飲食店の情報を検索できます!</h2>
+        <img id="man" src="oishii_man.png" width="100">
+        <img id="woman" src="oishii_woman.png"width="100">
         
-        <label for="search">何を食べたい気分ですか?</label>
-        <input type="text" name="search" id="search" size="20">
-        <button id="search">検索する!</button>
+        
+        <h2>飲食店の情報を検索できます!</h2>
+        <div id="but">
+        <label for="santaro">どんなものを食べたい気分ですか?</label>
+    <select name="gurumes" id="gurumes">
+        <option value="">食べたいジャンルを選択してください。</option>
+        <option value="izaka">居酒屋</option>
+        <option value="dining">ダイニングバー・バル</option>
+        <option value="sousaku">創作料理</option>
+        <option value="japan">和食</option>
+        <option value="you">洋食</option>
+        <option value="italy">イタリアン・フレンチ</option>
+        <option value="china">中華</option>
+        <option value="meat">焼肉・ホルモン</option>
+        <option value="azia">アジア・エスニック料理</option>
+        <option value="country">各国料理</option>
+        <option value="party">カラオケ・パーティ</option>
+        <option value="bar">バー・カクテル</option>
+        <option value="cafe">カフェ・スイーツ</option>
+        <option value="other">その他グルメ</option>
+        <option value="osaka">お好み焼き・もんじゃ</option>
+        <option value="korea">韓国料理</option>
+    </select>
+    <button id="sendRequest">検索する!</button>
+</div>
+    
+        <!-- <label for="search">何を食べたい気分ですか?</label>
+         <input type="text" name="search" id="search" size="20">
+         <button id="search">検索する!</button> 
         
 
         <p>ジャンル | 店舗名 | 予算 | 営業時間 | 住所 | アクセス情報</p>
         <p>和食 | 大和屋 | 1000円 ~ 2000円 | 午前11時 ~ 午後9時 | 東京都aa市 | Bスタジアム前駅徒歩10分</p>
-        <p>カフェ | C coffee | 500円 ~ 800円 | 午前7時 ~ 午後7時 | 東京都aa市 | C駅徒歩5分</p>
+        <p>カフェ | C coffee | 500円 ~ 800円 | 午前7時 ~ 午後7時 | 東京都aa市 | C駅徒歩5分</p>-->
         <div id ="info">
+            <p id ='name'></p>
+        </div>
+        <div id = "research">
 
         </div>
     </body>

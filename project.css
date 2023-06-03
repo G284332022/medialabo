@@ -1,0 +1,29 @@
+h1{color:white;
+    background:linear-gradient(0.25turn,white,#79ddf0,#3e5bfb,#79ddf0,white);
+    text-align:center;
+  }
+  body{
+    background-color: #d7fdb0;
+  }
+  img#man{
+    float: left
+  }
+  img#woman{
+    float: right
+  }
+  h2{
+    text-align:center;
+   }
+   div#but{
+      text-align:center;
+   }
+   h3{
+    font-family: "Gill Sans", sans-serif;
+    text-align:center;
+    text-shadow: 1px 3px 5px orange,1px 0px 20px orange;
+    color:white
+  }
+  div#research{
+    color:red;
+   text-align:center;
+  }

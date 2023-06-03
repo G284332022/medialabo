@@ -1,4 +1,4 @@
-let data = {
+/*let data = {
   "results": {
     "api_version": "1.26",
     "results_available": 52,
@@ -197,12 +197,183 @@ let data = {
       }
     ]
   }
-};
+};*/
 
 /////////// 課題3-2 ここからプログラムを書こう
-
-for(let n of data.results.shop){
+//let dt = document.querySelector('div#info');
+/*for(let n of data.results.shop){
  console.log(n);
- 
+ //let acce = document.createElement('p');
+ //p.textContent
 
+}*/
+
+/*let gour = document.querySelector('div#info');
+let a = document.createElement('p');
+let b = document.createElement('p');
+let c = document.createElement('p');
+let d = document.createElement('p');
+let e = document.createElement('p');
+let f = document.createElement('p');
+let div = document.createElement('div');
+div.insertAdjacentElement('beforeend', a);
+gour.insertAdjacentElement('beforeend', a)
+div.insertAdjacentElement('beforeend', b);
+gour.insertAdjacentElement('beforeend', b)
+div.insertAdjacentElement('beforeend', c);
+gour.insertAdjacentElement('beforeend', c)
+div.insertAdjacentElement('beforeend', d);
+gour.insertAdjacentElement('beforeend', d)
+div.insertAdjacentElement('beforeend', e);
+gour.insertAdjacentElement('beforeend', e)
+div.insertAdjacentElement('beforeend', f);
+gour.insertAdjacentElement('beforeend', f)
+for(let n of data.results.shop){
+  a.textcontent = n.address;
+  b.textcontent = n.access;
+  c.textcontent = n.budget.average;
+  d.textcontent = n.genre.name;
+  e.textcontent = n.name;
+  f.textcontent = n.open;
+}*/
+
+/*let gurS = document.querySelector('serect#gurumes');
+  let idx = gurS.selectedIndex;
+  let os = gurS.querySelectorAll('option');
+  let o = os.item(idx);
+  console.log('選択された ' + idx + ' 番目の option の情報:');
+    console.log('  value=' + o.getAttribute('value'));  // id 属性を表示
+    console.log('  textContent='+o.textContent);
+*/
+let kaisu = 0;
+let link = document.querySelector('#sendRequest');
+link.addEventListener('click', sendRequest);
+
+
+// 通信を開始する処理
+function sendRequest() {
+  let gurs = document.querySelector('select#gurumes');
+  let idx = gurs.selectedIndex;
+  let os = gurs.querySelectorAll('option');
+  let o = os.item(idx);
+  console.log('選択された ' + idx + ' 番目の option の情報:');
+    console.log('  value=' + o.getAttribute('value'));  // id 属性を表示
+    console.log('  textContent='+o.textContent);
+    let genre = '';
+    if(idx === 1){
+      genre = 'G001';
+    }else if(idx === 2){
+      genre = 'G002';
+    }else if(idx === 3){
+      genre = 'G003';
+    }else if(idx === 4){
+      genre = 'G004';
+    }else if(idx === 5){
+      genre = 'G005';
+    }else if(idx === 6){
+      genre = 'G006';
+    }else if(idx === 7){
+      genre = 'G007';
+    }else if(idx === 8){
+      genre = 'G008';
+    }else if(idx === 9){
+      genre = 'G009';
+    }else if(idx === 10){
+      genre = 'G010';
+    }else if (idx === 11){
+      genre = 'G011';
+    }else if (idx === 12){
+      genre = 'G012';
+    }else if (idx === 13){
+      genre = 'G013';
+    }else if (idx === 14){
+      genre = 'G014';
+    }else if (idx === 15){
+      genre = 'G015';
+    }else if (idx === 16){
+      genre = 'G016';
+    }else if(idx === 17){
+      genre = 'G017';
+    }
+    // URL を設定
+    let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/'+ genre +'.json';
+
+    // 通信開始
+    axios.get(url)
+        .then(showResult)   // 通信成功
+        .catch(showError)   // 通信失敗
+        .then(finish);      // 通信の最後の処理
+}
+// 通信が成功した時の処理
+function showResult(resp) {
+
+  // サーバから送られてきたデータを出力
+  let data = resp.data;
+
+  // data が文字列型なら，オブジェクトに変換する
+  if (typeof data === 'string') {
+      data = JSON.parse(data);
+  }
+  //出力する
+  if(kaisu !== 0){
+  let pyou = document.querySelectorAll('p');
+  let h3 = document.querySelectorAll('h3');
+  for(let h3r of h3){
+    h3r.remove();
+  }
+  for (let prem of pyou){
+    prem.remove();
+  }
+}
+  for(let i=0;i<data.results.shop.length;i=i+1){
+    let divi = document.querySelector('div#info');  
+    let h3 = document.createElement('h3')
+    h3.textContent = ('店舗名:' + data.results.shop[i].name);
+    divi.insertAdjacentElement('beforeend', h3);
+    let pyo = document.createElement('p');
+    pyo.textContent = ('キャッチコピー:' + data.results.shop[i].catch);
+    divi.insertAdjacentElement('beforeend', pyo);
+    pyo = document.createElement('p');
+    pyo.textContent = ('アクセス情報:' + data.results.shop[i].access);
+    divi.insertAdjacentElement('beforeend', pyo);
+    pyo = document.createElement('p');
+    pyo.textContent = ('最寄駅:' + data.results.shop[i].station_name);
+    divi.insertAdjacentElement('beforeend', pyo);
+    pyo = document.createElement('p');
+    pyo.textContent = ('住所:' + data.results.shop[i].address);
+    divi.insertAdjacentElement('beforeend', pyo);
+    pyo = document.createElement('p');
+    pyo.textContent = ('予算:' + data.results.shop[i].budget.name);
+    divi.insertAdjacentElement('beforeend', pyo);
+    pyo = document.createElement('p');
+    pyo.textContent = ('営業日時:' + data.results.shop[i].open);
+    divi.insertAdjacentElement('beforeend', pyo);
+  }
+  let divi = document.querySelector('div#research');  
+  pyo = document.createElement('p');
+    pyo.textContent = ('検索結果は以上です。再検索も可能です。');
+    divi.insertAdjacentElement('beforeend', pyo);
+    pyo = document.createElement('p');
+    pyo.textContent = ('条件を変えれば、再検索が可能です。');
+    divi.insertAdjacentElement('beforeend', pyo);
+    let butt = document.querySelector('button#sendRequest');
+    butt.textContent = '再検索する!'
+  kaisu = kaisu+1;
+
+//console.log('test' + data.results.shop.length);
+  // data をコンソールに出力
+  //console.log(data);
+  console.log(kaisu);
+  // data.x を出力
+  //console.log(data.x);
+}
+
+// 通信エラーが発生した時の処理
+function showError(err) {
+  console.log(err);
+}
+
+// 通信の最後にいつも実行する処理
+function finish() {
+  console.log('Ajax 通信が終わりました');
 }
